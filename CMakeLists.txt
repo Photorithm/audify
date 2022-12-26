@@ -76,6 +76,7 @@ execute_process(COMMAND node -p "require('node-addon-api').include"
 string(REPLACE "\n" "" NODE_ADDON_API_DIR ${NODE_ADDON_API_DIR})
 string(REPLACE "\"" "" NODE_ADDON_API_DIR ${NODE_ADDON_API_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${NODE_ADDON_API_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE /usr/include/nodejs/src)
 
 # Compile the library
 target_link_libraries(${PROJECT_NAME} ${OPENSSL_LIBS} ${CMAKE_JS_LIB} opus rtaudio)
